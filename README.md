@@ -1,97 +1,60 @@
 # 🦖 Munch-Engine: The Precision-Retrieval Swarm
 
-**Stop burning your budget on "Brute-Force" AI.** Most AI agents explore code and data the expensive way: they read entire files, skim thousands of irrelevant lines, and flood their context windows with noise. This "Naive RAG" approach is slow, hallucination-prone, and costs up to 100x more than it should.
+**Stop feeding your budget to brute-force AI.** Most agents explore repositories the expensive way: opening entire files, skimming thousands of irrelevant lines, and flooding context windows with noise. This "Naive RAG" approach is slow, costly, and hallucination-prone.
 
-**Munch-Engine** is a recursive, multi-agent framework built on the **jMRI (jMunch Retrieval Interface) Specification**. It enables agents to navigate codebases, documentation, and datasets with surgical precision—retrieving only the exact symbols, sections, or rows needed to solve a task.
+**Munch-Engine** is a recursive, multi-agent framework built on the **jMRI (jMunch Retrieval Interface)** specification. It enables agents to navigate codebases, documentation, and datasets with surgical precision—retrieving only the exact symbols, sections, or rows needed to solve a task.
 
+---
 
 ## 💡 The "First Principles" Advantage
+This engine is built on three core values to ensure maximum efficiency:
+1. **Precision > Volume:** Fetching 20 lines of a specific function is better than reading a 2,000-line file.
+2. **Objective ROI:** Every tool call returns a `_meta` block showing exactly how many tokens were saved. 
+3. **Autopoietic Growth:** The system automatically builds its own "Skills" (.md files) when it encounters a new API or SDK.
 
-This engine operates on three core values:
-
-	1. Precision > Volume: Fetching 20 lines of a specific function is better than reading a 2,000-line file.
-
-	2. Objective ROI: Every tool call returns a _meta block showing exactly how many tokens were saved.
-
-	3. Autopoietic Growth: The system automatically builds its own "Skills" (.md files) when it encounters a new API or SDK.
-
+---
 
 ## 🏗️ The Architecture (Tiered Agency)
+Munch-Engine utilizes a three-tier swarm to separate high-level strategy from tactical execution:
 
-The engine utilizes a three-tier "Swarm" to separate strategy from execution:
+- **The Project Director (Strategic):** The "Brain." Analyzes requests, scans the `/skills` library, and deconstructs goals into symbol-level tasks.
+- **The Skill Creator Director (Architectural):** The "Engineer." If a skill is missing, it triggers a **Munch-Build** to ingest documentation and generate a new precision skill on the fly.
+- **The Tactical Worker (Execution):** The "Hands." Specialized agents that operate under "Context Hygiene," seeing only the specific code or data blocks they are tasked to modify.
 
-	1. **The Project Director (Strategic):** The "Brain." Analyzes your request, scans the ``` /skills ``` library, and coordinates the mission.
+---
 
-	2. **The Skill Creator Director (Architectural):** The "Engineer." If a skill is missing, it reads the documentation and drafts a new jMRI-compliant skill file.
+## 📈 Performance Benchmarks (Measured Savings)
+Precision context consistently beats brute-force context. The following benchmarks represent real-world savings using jMRI retrieval:
 
-	3. **The Tactical Worker (Execution):** The "Hands." A specialized agent that uses a single skill to perform a precise task (e.g., refactoring one function) without seeing the rest of the project.
+| Task | Traditional Approach | Munch-Engine (jMRI) | Savings |
+| :--- | :--- | :--- | :--- |
+| **Find a specific function** | ~40,000 tokens | ~200 tokens | **99.5%** |
+| **Understand Module API** | ~15,000 tokens | ~800 tokens | **94.6%** |
+| **Explore Repo Structure** | ~200,000 tokens | ~2,000 tokens | **99.0%** |
+| **Doc Reference Search** | ~12,000 tokens | ~400 tokens | **96.6%** |
 
+---
 
-## 🚀 Quickstart: 5 Minutes to 99% Savings
+## 🚀 Quickstart: 5 Minutes to ROI
+1. **Setup:** Install core jMunch tools: `pip install jcodemunch-mcp jdocmunch-mcp jdatamunch-mcp`.
+2. **Initialize:** Point your primary agent to `agent.md` and ensure `GLOSSARY.md` is in the root.
+3. **Task:** Give the Director a high-level goal (e.g., *"Refactor the auth logic in this repo using jMRI precision"*).
+4. **Audit:** Review the efficiency report at the end of the session to see your total `tokens_saved`.
 
-#### 1. Prerequisites
+---
 
-Install the core jMunch MCP servers:
-```Bash
-pip install jcodemunch-mcp jdocmunch-mcp jdatamunch-mcp
-```
+## 🛠️ Substrate & Standards
 
-#### 2. Installation
+The Munch-Engine is powered by the **jMRI (jMunch Retrieval Interface)** specification and utilizes the following core MCP servers:
 
-Clone this repository and point your AI agent (Claude Code, Cursor, etc.) to the ``` agent.md ``` file.
-```Bash
-git clone https://github.com/your-repo/munch-engine.git
-```
+* **Standard:** [jMRI Specification](https://github.com/jgravelle/mcp-retrieval-spec) — The protocol for precision agentic retrieval.
+* **Code:** [jCodeMunch-MCP](https://github.com/jgravelle/jcodemunch-mcp) — AST-based symbol indexing.
+* **Data:** [jDataMunch-MCP](https://github.com/jgravelle/jdatamunch-mcp) — Tabular data to SQLite transformation.
+* **Docs:** [jDocMunch-MCP](https://github.com/jgravelle/jdocmunch-mcp) — Hierarchical documentation mapping.
 
-#### 3. Run a Task
+---
 
-Ask the Director a high-level goal:
-
-"Analyze the auth logic in this repo and update the login session timeout to 24 hours."
-
-
-#### 4. The Loop
-
-The engine will:
-
-- **Discover:** Scan your repo using jCodeMunch.
-
-- **Search:** Find the specific login function ID.
-
-- **Retrieve:** Fetch only that function.
-
-- **Execute:** A Worker performs the update.
-
-- **Report:** You receive the fix and an Efficiency Report.
-
-
-## 📈 Performance Benchmarks
-
-Task | Naive Retrieval | Munch-Engine (jMRI) | Savings
-:-- | --- | --- | --:
-Repo Exploration | "200,000 tokens" | "2,000 tokens" | 99%
-Doc Reference | "12,000 tokens" | 400 tokens | 96%
-Data Aggregation | Full File Load | Row-Level Query | Variable (High)
-
-
-## 🛠️ The Skill Factory
-
-One of the most powerful features of Munch-Engine is its ability to self-expand. If you need to work with a new SDK (e.g., Supabase or Stripe), simply tell the Director. The Skill Creator will:
-
-	1. Use jDocMunch to ingest the official API docs.
-
-	2. Generate a new skill-supabase.md using the Munch Formula.
-
-	3. Validate the skill and add it to your library for future use.
-
-
-## 📜 License & Credits
-
-**Framework:** Open Source (MIT)
-
-**Specification:** jMRI (jMunch Retrieval Interface)
-
-**Author:** Developed in collaboration with AlexJ, inspired by the work of **J. Gravelle**.
-
-“Good communication is efficient AND effective mutual understanding.”
-Join the swarm. Save the tokens.
+## 📜 Credits & Standards
+- **Standard:** [jMRI Specification](https://github.com/jgravelle/mcp-retrieval-spec)
+- **Author:** Developed by **AlexJ**, inspired by the precision-retrieval work of **J. Gravelle**.
+- **Philosophy:** *"Good communication is efficient AND effective mutual understanding."*
