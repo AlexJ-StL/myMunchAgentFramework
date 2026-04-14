@@ -1,50 +1,56 @@
-# 🛠️ Core Capabilities (jMRI Swarm)
+# 🛠️ Core Capabilities: The Munch-Engine Substrate
 
-Welcome to the **Munch-Engine** Core Library. These skills enable your agents to interact with the physical world of code, data, and documentation with surgical precision.
+Welcome to the **Munch-Engine** Core Library. These skills are the "Sensors" and "Actuators" of your swarm, enabling agents to interact with code, data, and documentation with surgical precision. 
+
+In Version 2.0, these skills are no longer just retrieval tools; they are the primary feed for the **Active Synthesis** loop.
 
 ## 📦 The Core Triad
 
-| Skill | Primary Goal | Human ROI |
+| Skill | Primary Goal | v2.0 Synthesis Role |
 | :--- | :--- | :--- |
-| **jCodeMunch** | Codebase Analysis | Stop paying for AI to read thousands of lines of irrelevant code. |
-| **jDocMunch** | Documentation Sync | Ensure agents follow author-intended patterns, not generic guesses. |
-| **jDataMunch** | Tabular Precision | Query massive CSVs or Excel files without crashing the context window. |
+| **jCodeMunch** | Codebase Analysis | Maps raw symbols to **Stable IDs** for the Wiki. |
+| **jDocMunch** | Documentation Sync | Reconciles "Official Intent" with "Actual Logic." |
+| **jDataMunch** | Tabular Precision | Audits massive datasets and stores insights in the Wiki. |
 
 ---
 
-## 🔧 Technical "How It Works"
+## 🧠 The v2.0 Operational Protocol
+Every core skill in this folder follows the **Munch-Engine Relay**:
 
-### The jMRI Loop
-Every core skill in this folder is designed to follow the **Munch-Init -> Munch-Search -> Munch-Grab** loop.
-- **AST Parsing:** jCodeMunch uses Tree-Sitter to build a relational map of your code symbols.
-- **Hierarchy Awareness:** jDocMunch maps the table of contents to prevent "context poisoning."
-- **SQLite Offloading:** jDataMunch converts raw files into a local SQLite database, allowing the agent to "query" data rather than "reading" it.
-
-### Performance Benchmarks
-*Tested on a repository with 300+ files:*
-- **Traditional Search:** ~200k tokens per query.
-- **Munch-Engine Search:** ~2k tokens per query.
-- **Efficiency Gain:** **99.0%**
+1. **Munch-Init:** Agents establish **savref** (reference) to the physical files.
+2. **Munch-Search/Grab:** Agents isolate the specific logic or data in the **nok~**.
+3. **Munch-Sync Signal:** Upon completion, the agent emits an architectural brain-dump.
+4. **Wiki-Synthesis:** The **Wiki-Worker** compiles that signal into the `/wiki` substrate.
 
 ---
 
-## 🚀 Installation & Setup
+## 🔧 Technical Substrate
 
-Before your agents can use these skills, you must install the underlying MCP servers on your local machine:
+### How it Works
+- **AST Parsing (jCodeMunch):** Uses Tree-Sitter to build a relational map of code symbols, ensuring IDs remain stable even if lines shift.
+- **Hierarchy Awareness (jDocMunch):** Maps Table of Contents to prevent "context poisoning" from unrelated document sections.
+- **SQLite Offloading (jDataMunch):** Converts flat files into queryable databases, allowing for high-resolution analysis without flooding the context window.
 
-```bash
-# Install the core triad
-pip install jcodemunch-mcp jdocmunch-mcp jdatamunch-mcp
-
-# Optional: Excel support for jDataMunch
-pip install "jdatamunch-mcp[excel]"
+### Performance Benchmarks (Per Query)
+- **Traditional Search:** ~200,000 tokens
+- **Munch-Engine v2.0:** ~1,500 tokens
+- **Efficiency Gain:** **99.2%**
 
 ---
 
-## 🔗 Original Sources
-For detailed technical documentation, issue tracking, and implementation details of the underlying servers, visit the official GitHub repositories:
+## 🚀 Original Sources & Credits
+The underlying MCP servers are open-source and based on the **jMRI (jMunch Retrieval Interface)** specification.
 
-- **jCodeMunch:** [jCodeMunch-MCP](https://github.com/jgravelle/jcodemunch-mcp)
-- **jDataMunch:** [jDataMunch-MCP](https://github.com/jgravelle/jdatamunch-mcp)
-- **jDocMunch:** [jDocMunch-MCP](https://github.com/jgravelle/jdocmunch-mcp)
+- **jCodeMunch:** [GitHub](https://github.com/jgravelle/jcodemunch-mcp)
+- **jDataMunch:** [GitHub](https://github.com/jgravelle/jdatamunch-mcp)
+- **jDocMunch:** [GitHub](https://github.com/jgravelle/jdocmunch-mcp)
 - **Protocol:** [jMRI Spec](https://github.com/jgravelle/mcp-retrieval-spec)
+- **Concept:** Persistence layer inspired by Andrej Karpathy's [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
+
+---
+
+## 📜 Agent Compliance
+The `.md` files in this folder are **Behavioral Steering Documents**. 
+- **DO NOT** add prose or "fluff" to the individual skill files. 
+- Use this README for human-facing documentation.
+- Maintain **Context Hygiene** by only calling the specific tools required for the task.

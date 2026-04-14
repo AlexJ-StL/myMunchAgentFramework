@@ -1,0 +1,59 @@
+myMunchAgentFramework/
+├── agents.md
+├── docs/
+│   ├── jCodeMunch-README.md
+│   ├── jDataMunch-README.md
+│   ├── jDocMunch-README.md
+│   ├── jMRI-README.md
+│   └── KARPATHY-WIKI-CONCEPT.md
+├── examples/
+│   ├── 01_repo_refactor/
+│   │   └── playbook.md
+│   ├── 02_docs_to_skill/
+│   │   └── playbook.md
+│   ├── 03_data_audit/
+│   │   └── playbook.md
+│   └── v2_knowledge_replay/
+│       └── playbook.md
+├── Framework Review 04132026.md
+├── GLOSSARY.md
+├── package-structure-v2.md
+├── prompts/
+│   ├── builder-prompt.md
+│   ├── director-prompt.md
+│   ├── skill-director-prompt.md
+│   ├── wiki-worker-prompt.md
+│   └── worker-prompt.md
+├── README.md
+├── sample_app/
+│   ├── data/
+│   │   └── transactions.csv
+│   └── src/
+│       ├── config.ts
+│       ├── core/
+│       │   └── auth.ts
+│       ├── data/
+│       └── utils/
+├── skills/
+│   ├── core/
+│   │   ├── README.md
+│   │   ├── skill-jcodemunch-mcp.md
+│   │   ├── skill-jdatamunch-mcp.md
+│   │   ├── skill-jdocmunch-mcp.md
+│   │   └── skill-munch-wiki.md
+│   ├── generated/
+│   │   └── build-log.json
+│   └── standard/
+├── templates/
+│   ├── skill-formula-template.md
+│   └── wiki-index-template.md
+├── TUTORIAL.md
+└── wiki/
+├── architecture/
+│   └── session-logic.md
+├── entities/
+├── index.md
+└── skills/
+    ├── skill-entry-template.md
+    └── skill-stripe.md
+

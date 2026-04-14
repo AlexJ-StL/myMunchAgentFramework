@@ -1,6 +1,7 @@
 # Archive folders (as specified)
 /.archive/
 /skills/core/.archive/
+/prompts/.archive/
 
 # OS-generated files
 .DS_Store
