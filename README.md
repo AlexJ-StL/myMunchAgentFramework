@@ -16,7 +16,7 @@ Built on first principles for maximum efficiency and long-term accumulation:
 
 ---
 
-## ⚖️ Core Values (The AlexJ Standard)
+## ⚖️ Core Values (The Standard)
 1. **Objective Facts > Subjective Narratives:** Every agent action must be grounded in **savref** (reference).
 2. **Value Injection:** Prioritize non-performative empathy and effective mutual understanding (**rek~mi**).
 3. **The 2nd-Order Rule:** Always consider and document parallel consequences (**par~mi**) in the `/wiki`.
