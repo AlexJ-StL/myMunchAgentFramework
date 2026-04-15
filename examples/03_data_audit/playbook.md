@@ -1,59 +1,44 @@
-# 📖 Playbook 03: The Precision Data Audit
-
-* **Objective:** Extract specific insights from a massive dataset (e.g., a 500MB CSV of transaction logs) without reading the file.
-* **Target Substrate:** global_sales_2025.csv (2.5 million rows).
-* **Mechanism:** jDataMunch SQL-offloading.
-* **Total Tokens Saved:** ~5,000,000+ (Calculation: 500MB is roughly 125M tokens; Munch-Engine used < 5k).
-
----
+# 📖 Playbook 03: The Precision Data Audit (v2.1)
+**Objective:** Extract specific insights from a dataset without loading the entire file into the context window.
+**Target Substrate:** sample_app/data/transactions.csv.
+**Mechanism:** jDataMunch SQL-offloading for savref establishment.
+**Total Tokens Saved:** ~99% (Comparing full-file streaming vs. targeted SQL aggregation).
 
 ## 📥 The Intent
-* **User:** "I need to know the total revenue for 'Region: Southeast' during 'Q3' from the sales CSV. Also, find the specific Row ID for the largest single transaction in that group."
-
----
+**User:** "I need to know the total revenue for 'Region: Southeast' from our transaction data. Also, find the specific Stable ID for the largest single transaction in that group."
 
 ## 🧠 Agentic Monologue (The "Thought" Process)
 
 ### Phase 1: Munch-Init (Schema Mapping)
-
-* **Director:** "Establishing savref of the dataset. I cannot reason about the data (savraz) until I understand the column types and cardinality."
-* **Action:** jdatamunch::describe_dataset(filename="global_sales_2025.csv")
-* **Result:** Identifies columns: transaction_id, region, date, amount. Established that region is a categorical string.
+**Director:** "Establishing savref of the verified substrate. I must verify the column headers before reasoning (savraz)."
+**Action:** `jdatamunch::describe_dataset(filename="sample_app/data/transactions.csv")`
+**Result:** Identifies columns: transaction_id, region, date, amount, status.
 
 ### Phase 2: Munch-Search (The Aggregation)
-
-* **Director:** "Performing a targeted aggregation. I am moving from fok~ to nok~ by requesting only the sum of the 'amount' column for the specified filters."
-* **Action:** jdatamunch::aggregate(dataset="global_sales_2025", dimensions=["region"], measures=["sum(amount)"], filters={"region": "Southeast", "date": {"between": ["2025-07-01", "2025-09-30"]}})
-* **Result:** Revenue: $4,200,550.
+**Director:** "Performing targeted aggregation. Moving from fok~ to fok~ by requesting only the sum of the 'amount' column for 'Southeast'."
+**Action:** jdatamunch::aggregate(dataset="sample_app/data/transactions", dimensions=["region"], measures=["sum(amount)"], filters={"region": "Southeast"})
+**Result:** Revenue: $151,200.50 (based on sample outliers).
 
 ### Phase 3: Munch-Grab (Row-Level Strike)
-
-* **Director:** "Identifying the outlier. I am requesting the single record with the highest value to maintain Context Hygiene."
-* **Action:** jdatamunch::get_rows(dataset="global_sales_2025", sort="-amount", limit=1, filters={"region": "Southeast"})
-* **Worker nok~ (Near-context):**
-	```JSON
-	{ "id": "global_sales_2025::row_882194#row", "amount": 150000, "customer": "CorpX" }
-	```
-
----
+**Director:** "Isolating the outlier to maintain Context Hygiene."
+**Action:** `jdatamunch::get_rows(dataset="sample_app/data/transactions", sort="-amount", limit=1, filters={"region": "Southeast"})`
+**Worker nok~ (Near-context):**
+```
+JSON
+{ 
+  "transaction_id": "TXN_882", 
+  "region": "Southeast", 
+  "amount": 150000.00, 
+  "status": "completed" 
+}
+```
 
 ## 📤 The Result
-* **Tactical Worker:** "The total revenue for the Southeast in Q3 was $4,200,550. The largest single transaction was for $150,000 (ID: row_882194)."
-
----
+**Tactical Worker:** "The total revenue for the Southeast region was $151,200.50. The largest single transaction was for $150,000.00 (ID: TXN_882)."
 
 ## 📊 Munch-Audit (ROI Report)
-
-* **Method:** jDataMunch SQL-to-SQLite.
-* **Tokens Used:** 2,100.
-* **Naive Baseline:** ERROR (Context Window Exceeded) or ~125 Million tokens if streamed.
-* **Savings:** Theoretical Maximum.
-* **Status:** rek~mi achieved via surgical query.
-
----
-
-## 🛠️ Key Takeaways for the User
-
-* **Size Independence:** The engine's performance remains the same whether the file is 1MB or 10GB.
-* **Computational Offloading:** The heavy lifting (summing millions of rows) happened in the MCP server, not the LLM.
-* **Traceability:**** The agent provided a Stable Row ID, allowing the human to verify the specific entry in the original file.
+**Method:** `jDataMunch` SQL-to-SQLite relay.
+**Tokens Used:** 1,850.
+**Naive Baseline:** ~15,000 tokens (if reading the full 1,000-row CSV).
+**Savings:** ~87% (Scaling to 99%+ as file size increases).
+**Status:** `rek~mi` achieved via surgical query.

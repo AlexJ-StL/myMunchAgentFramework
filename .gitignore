@@ -2,6 +2,9 @@
 /.archive/
 /skills/core/.archive/
 /prompts/.archive/
+/skills/playbooks/.archive/
+/examples/01_repo_refactor/.archive/
+/examples/03_data_audit/.archive/
 
 # OS-generated files
 .DS_Store

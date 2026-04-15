@@ -16,6 +16,7 @@
 | **nok~** | Near-context | Active attention on a specific Stable ID or Wiki Page. |
 | **fok~** | Far-context | Information outside the current focus; resolution is lost. |
 | **par~mi** | Parallel Threads | Consideration of 2nd and 3rd order consequences. |
+| **logic drift** | Cognitive Dissonance | Signaling that savref (code) contradicts **savwiki** (wiki). Triggers a priority **Munch-Snyc**. |
 
 ---
 
