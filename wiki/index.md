@@ -1,17 +1,15 @@
-# 🗺️ Munch-Engine v2.0 Knowledge Map
+# 🗺️ Munch-Engine v2.2 Knowledge Map
 
 ## 🏗️ Core Architecture (savwiki)
-- [[architecture/session-logic]] — Example of SHA-256 transition & legacy dependencies.
+- [[architecture/session-logic]] — Legacy auth & hashing substrate.
 
-## 🛠️ Synthesized Skills
-- [[skills/skill-stripe]] — Pattern for Stripe SDK idempotency and IDs.
-
-## 🖇️ Global Stable IDs
+## 🖇️ Critical Stable IDs (Verified Substrate)
 | Entity | ID | Purpose |
 | :--- | :--- | :--- |
 | **Director** | `prompts/director-prompt.md` | Primary logic anchor. |
-| **Glossary** | `GLOSSARY.md` | Linguistic substrate. |
+| **Auth Core** | `sample_app/src/core/auth.ts` | Session validation logic. |
+| **Global Config** | `sample_app/src/config.ts` | **(PATH FIXED)** Legacy toggle source. |
 
 ## 🧪 System State
-- **Current Mode:** Active Synthesis (v2.0)
-- **Status:** All core jMRI skills initialized.
+- **Current Mode:** Active Synthesis (v2.2)
+- **Signal Format:** JSON-Standardized

@@ -27,8 +27,12 @@ You are a precision specialist operating under a "Need to Know" basis. You are t
 Use this exact format whenever a discovery requires the `/wiki` to be updated:
 
 [MUNCH-SYNC-SIGNAL]
-Target: [Path to the relevant Wiki page, e.g., wiki/architecture/session-logic.md]
-Stable ID: [The exact ID used for the grab]
-Insight: [Clear description of the discovery or change]
-Par~mi: [The 2nd or 3rd order consequence of this insight]
+```JSON
+{
+  "target": "wiki/architecture/session-logic.md",
+  "stable_id": "sample_app/src/core/auth.ts::validateSession#func",
+  "insight": "LegacyMode dependency confirmed; SHA-256 bypass risk identified.",
+  "par_mi": "Disabling legacyMode will invalidate 2018-era user sessions."
+}
+```
 [/MUNCH-SYNC-SIGNAL]

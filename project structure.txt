@@ -13,11 +13,13 @@ myMunchAgentFramework/
 │   │   └── playbook.md
 │   ├── 03_data_audit/
 │   │   └── playbook.md
-│   └── v2_knowledge_replay/
-│       └── playbook.md
+│   ├── v2_knowledge_replay/
+│   │   └── playbook.md
+│   └── WALKTHROUGH.md
 ├── Framework Review 04132026.md
 ├── FRAMEWORK_REVIEW_FINDINGS.md
 ├── FRAMEWORK_REVIEW_ITERATION_2.md
+├── FRAMEWORK_REVIEW_ITERATION_3.md
 ├── GLOSSARY.md
 ├── project structure.txt
 ├── prompts/
@@ -50,6 +52,9 @@ myMunchAgentFramework/
 ├── templates/
 │   ├── skill-formula-template.md
 │   └── wiki-index-template.md
+├── tools/
+│   ├── munch_sync.py
+│   └── validate_refs.py
 ├── TUTORIAL.md
 └── wiki/
     ├── architecture/

@@ -17,3 +17,10 @@ Point your agent to the root folder. Ask:
 
 ## 4. Verify the ROI
 Check the Munch-Audit in the final response. You should see a token savings of >90% compared to a full-file read.
+
+---
+
+## 🛠️ Automated Verification
+To ensure your environment is audit-ready, run the included utility scripts:
+1.  **python `tools/validate_refs.py`:** Ensures all Wiki Stable IDs are physically present in the code.
+2.  **python `tools/munch_sync.py` [json_file]:** Simulates the Wiki-Worker's archival process by injecting worker signals into the knowledge base.

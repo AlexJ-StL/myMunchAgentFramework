@@ -12,7 +12,7 @@ Synthesized map of the authentication substrate. This module manages the transit
 | Entity | Stable ID | Role |
 | :--- | :--- | :--- |
 | **Validation** | `sample_app/src/core/auth.ts::validateSession#func` | Primary entry point for session checks. |
-| **Config** | `sample_app/src/utils/config.ts::globalConfig#const` | Source of truth for `legacyMode` toggle. |
+| **Config** | `sample_app/src/config.ts::globalConfig#const` | Source of truth for `legacyMode` toggle. |
 
 ## ⚠️ Known Side Effects (par~mi)
 - **Session Invalidation:** Toggling `legacyMode` in `config.ts` will immediately change the validation path in `auth.ts`, potentially invalidating active sessions.
