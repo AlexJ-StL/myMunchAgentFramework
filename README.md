@@ -62,6 +62,46 @@ To prove the framework's validity, follow these steps using the included substra
 
 ---
 
+## 📖 Implementation Guide
+
+This section details how to implement the Munch-Engine framework and integrate it with your AI agents.
+
+### 🔧 Installation
+
+Ensure the jMRI triad is installed in your environment:
+
+```bash
+pip install jcodemunch-mcp jdatamunch-mcp jdocmunch-mcp
+```
+
+### 🤖 Agent Configuration
+
+Direct your agent to operate within the context of a target repository. The framework expects the following environmental setup:
+
+- **Working Directory:** The root of the repository you wish to manage.
+- **Tool Access:** The agent must have access to the MCP servers provided by the jMRI stack.
+
+### 📋 Standard Operating Procedure
+
+1. **Establish the Map (savwiki):** Instruct the Director to load the existing knowledge map from `/wiki/index.md`. If it does not exist, the Director will initiate a full synthesis pass.
+2. **Execute Tactical Changes:** Provide the agent with a Stable ID or a specific file path. The Tactical Worker will perform byte-precise modifications, ensuring no context poisoning.
+3. **Synthesize and Sync:** Every significant change must trigger a **Munch-Sync Signal**. The Wiki-Worker will then update the `/wiki` with new architectural insights, maintaining the "Mental Model" of the project.
+
+### 🧩 Integration with Your Agents
+
+To embed Munch-Engine into your agent's workflow:
+
+- **Directive:** Prefix high-level goals with "Director,". Example: *"Director, refactor the legacy authentication module using the stable ID `auth-module-v2` identified in the wiki."
+- **Feedback Loop:** After execution, agents should query the `/wiki` for updated documentation to confirm the "par~mi" (parallel consequences) of their actions.
+
+### 🛡️ Best Practices
+
+- Always prioritize **savwiki** over raw repository scanning to conserve token budget.
+- Use the `/sample_app` as a testing ground to validate token savings and framework integrity before deploying to production codebases.
+- Enforce the **2nd-Order Rule** by documenting any potential side effects in the wiki immediately.
+
+---
+
 ## 📜 Credits & Standards
 * **The LLM Wiki Pattern:** Based on the persistent knowledge architecture authored by **Andrej Karpathy**.
 * **jMRI Specification:** Reference implementation of the [jMunch Retrieval Interface](https://github.com/jgravelle/mcp-retrieval-spec).
