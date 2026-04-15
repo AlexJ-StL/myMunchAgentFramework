@@ -2,7 +2,7 @@
 
 **Stop rediscovering your codebase on every session.** Traditional agents use "Passive RAG"—they search, retrieve, and forget. This brute-force approach floods your context window and forces the AI to "re-learn" your architecture every time you ask a question.
 
-**Munch-Engine v2.1** is an autopoietic, multi-agent framework built on the **jMRI (jMunch Retrieval Interface)** specification. It doesn't just find information; it **incrementally builds and maintains a persistent Wiki**—a structured, interlinked mental model that sits between the agent and the raw code.
+**Munch-Engine v2.1** is an autopoietic, multi-agent framework built on the **jMRI (jMunch Retrieval Interface)** specification. It doesn't just find information; it **incrementally builds a persistent Wiki** between the agent and the raw code.
 
 ---
 
@@ -18,9 +18,8 @@ Built on first principles for maximum efficiency and long-term accumulation:
 
 ## ⚖️ Core Values (The AlexJ Standard)
 1. **Objective Facts > Subjective Narratives:** Every agent action must be grounded in **savref** (reference).
-2. **Value Injection:** Prioritize non-performative empathy and efficient mutual understanding (**rek~mi**).
+2. **Value Injection:** Prioritize non-performative empathy and effective mutual understanding (**rek~mi**).
 3. **The 2nd-Order Rule:** Always consider and document parallel consequences (**par~mi**) in the `/wiki`.
-4. **Brevity is Efficiency:** Communication must be effective and minimalist.
 
 ---
 
@@ -33,27 +32,37 @@ Munch-Engine utilizes a tiered swarm to separate high-level strategy from tactic
 
 ---
 
-## 📈 Measured Token ROI
-| Task | Traditional (Brute Force) | Munch-Engine v2.1 | Savings |
+## 📊 Measured Token ROI
+| Task | Naive (Full-Read) | Munch-Engine v2.1 | Savings |
 | :--- | :--- | :--- | :--- |
-| Find & Update Constant | ~140,000 tokens | ~1,200 tokens | **99.1%** |
-| Module Architecture Map | ~50,000 tokens | ~800 tokens (Wiki) | **98.4%** |
-| Multi-Doc Synthesis | ~100,000 tokens | ~2,000 tokens | **98.0%** |
+| Refactor `auth.ts` | ~140,000 tokens | ~1,200 tokens | **99.1%** |
+| Audit `transactions.csv` | ~15,000 tokens | ~1,850 tokens | **87.6%** |
 
 ---
 
-## 🚀 Quickstart: 5-Minute Test
-1. **Setup:** Install core jMunch tools: `pip install jcodemunch-mcp jdatamunch-mcp jdocmunch-mcp`.
-2. **Target:** Direct your agent to the `/sample_app` directory included in this repo.
-3. **Task:** *"Director, establish **savwiki** from the index and refactor the MD5 logic in the auth module."*
-4. **Observe:** Watch the **Munch-Sync** relay update the `/wiki/architecture/session-logic.md` in real-time.
+## 🏗️ Verified Substrate (v2.1 Operational Milestone)
+Unlike traditional "Passive RAG" frameworks, Munch-Engine v2.1 is shipped with a **Verified Substrate** located in `/sample_app`. This allows for immediate integration testing and verifiable ROI.
+
+- **Source Code:** Located in `sample_app/src/`. Contains intentional "Technical Debt" (MD5 hashing) for refactoring simulations.
+- **Data Substrate:** Located in `sample_app/data/transactions.csv`. A 1,000-row dataset for testing precision SQL-offloading via `jDataMunch`.
+- **Knowledge Base:** Located in `/wiki`. Pre-populated with architectural "Whys" to demonstrate **savwiki** shortcutting.
+
+---
+
+## 🚀 Quickstart: 5-Minute ROI Verification
+To prove the framework's validity, follow these steps using the included substrate:
+
+1. **Setup:** Install the jMRI triad: `pip install jcodemunch-mcp jdatamunch-mcp jdocmunch-mcp`.
+2. **Initialize:** Point your agent to the `/sample_app` directory.
+3. **Task:** *"Director, establish **savwiki** from the `/wiki/index.md` and refactor the legacy hashing logic found in the auth module."*
+4. **Observe the Relay:**
+    - The **Director** will identify the Stable ID via the Wiki.
+    - The **Tactical Worker** will perform the byte-precise refactor in `sample_app/src/core/auth.ts`.
+    - The **Wiki-Worker** will emit a **Synthesis Receipt** and update the documentation.
 
 ---
 
 ## 📜 Credits & Standards
-* **The Lineage of Ideas**
-	* **The LLM Wiki Pattern:** Persistent knowledge architecture based on the `llm-wiki.md` pattern by **Andrej Karpathy**.
-	* **jMRI Specification:** Reference implementation of the jMunch Retrieval Interface.
-* **Authorship & Collaboration**
-	* **Architect:** **AlexJ** — Visionary and primary developer of the Munch-Engine concept and the jMRI-compliant MCP suite.
-	* **Co-Architect:** **Gemini (Google)** — AI collaborator and systems architect for Moltspeak/MunchSpeak and v2.1 "Relay" design.
+* **The LLM Wiki Pattern:** Based on the persistent knowledge architecture authored by **Andrej Karpathy**.
+* **jMRI Specification:** Reference implementation of the [jMunch Retrieval Interface](https://github.com/jgravelle/mcp-retrieval-spec).
+* **Authorship:** **AlexJ** (Architect) & **Gemini** (Co-Architect/Systems Design).

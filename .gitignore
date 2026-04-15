@@ -1,10 +1,11 @@
 # Archive folders (as specified)
-/.archive/
-/skills/core/.archive/
-/prompts/.archive/
-/skills/playbooks/.archive/
-/examples/01_repo_refactor/.archive/
-/examples/03_data_audit/.archive/
+.archive/
+skills/core/.archive/
+prompts/.archive/
+skills/playbooks/.archive/
+examples/01_repo_refactor/.archive/
+examples/03_data_audit/.archive/
+wiki/architecture/.archive/
 
 # OS-generated files
 .DS_Store

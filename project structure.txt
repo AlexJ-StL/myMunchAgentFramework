@@ -16,8 +16,10 @@ myMunchAgentFramework/
 │   └── v2_knowledge_replay/
 │       └── playbook.md
 ├── Framework Review 04132026.md
+├── FRAMEWORK_REVIEW_FINDINGS.md
+├── FRAMEWORK_REVIEW_ITERATION_2.md
 ├── GLOSSARY.md
-├── package-structure-v2.md
+├── project structure.txt
 ├── prompts/
 │   ├── builder-prompt.md
 │   ├── director-prompt.md
@@ -42,18 +44,18 @@ myMunchAgentFramework/
 │   │   ├── skill-jdocmunch-mcp.md
 │   │   └── skill-munch-wiki.md
 │   ├── generated/
-│   │   └── build-log.json
+│   │   ├── build-log.json
+│   │   └── skill-stripe.md
 │   └── standard/
 ├── templates/
 │   ├── skill-formula-template.md
 │   └── wiki-index-template.md
 ├── TUTORIAL.md
 └── wiki/
-├── architecture/
-│   └── session-logic.md
-├── entities/
-├── index.md
-└── skills/
-    ├── skill-entry-template.md
-    └── skill-stripe.md
-
+    ├── architecture/
+    │   └── session-logic.md
+    ├── entities/
+    ├── index.md
+    └── skills/
+        ├── skill-entry-template.md
+        └── skill-stripe.md

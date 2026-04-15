@@ -2,14 +2,10 @@
   "build_history": [
     {
       "skill": "skill-stripe",
-      "timestamp": "2026-04-11T10:22:00Z",
-      "source_docs": "https://docs.stripe.com/api",
-      "tokens_consumed_discovery": 4500,
-      "status": "verified",
-      "output_files": [
-        "skills/core/skill-munch-wiki.md",
-        "wiki/skills/skill-stripe.md"
-      ]
+      "timestamp": "2026-04-15T09:00:00Z",
+      "tokens_consumed": 4200,
+      "status": "Verified",
+      "output": ["skills/generated/skill-stripe.md", "wiki/skills/skill-stripe.md"]
     }
   ]
 }

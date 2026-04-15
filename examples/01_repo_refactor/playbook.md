@@ -1,48 +1,28 @@
-# 📖 Playbook 01: The Surgical Repo Refactor
-**Objective:** Update a specific configuration value (Legacy Mode) across the codebase without redundant searching.
-**Target Substrate:** `/sample_app` (The Verified Substrate).
-**Logic:** Prioritize **savwiki** over **savref** to achieve maximum ROI.
+# 📖 Playbook 01: The Surgical Repo Refactor (v2.1 Verified)
 
-## 📥 The Intent
-**User:** *"I need to disable the legacy mode in our configuration to ensure we are using modern SHA-256 validation. Update the value and let me know the impact."*
+**Objective:** Disable Legacy Mode to enforce SHA-256 validation.
+**Target Substrate:** `/sample_app/src/utils/config.ts`
+**ROI Logic:** Prioritize **savwiki** to avoid repository-wide scanning.
 
-## 🧠 Agentic Monologue (The "Thought" Process)
+## 🧠 The jMRI Loop
 
-### Phase 1: Munch-Init (Wiki-First Discovery)
-**Director:** "Establishing savwiki by checking the project memory. I am looking for the location of the legacy configuration toggle."
-**Action:** read_wiki_page(path="wiki/index.md")
-**Result:** Found link to [[architecture/session-logic]].
-**Action:** read_wiki_page(path="wiki/architecture/session-logic.md")
-**Result:** Wiki Verified. "Legacy Mode is controlled in sample_app/src/utils/config.ts via the legacyMode property."
+### Phase 1: Munch-Init (Wiki-First)
+**Director:** "Checking `wiki/architecture/session-logic.md` for the configuration anchor."
+- **Result:** Found Stable ID: `sample_app/src/utils/config.ts::globalConfig#const`.
 
 ### Phase 2: Munch-Grab (Tactical Isolation)
-**Director:** "Executing a surgical strike. I am providing the Tactical Worker with the exact Stable ID found in the Wiki. No repository-wide search required."
-**Action:** `jcodemunch::get_symbol(id="sample_app/src/utils/config.ts::globalConfig#const")`
-**Worker nok~ (Near-context):**
-```TypeScript
-export const globalConfig = {
-version: "1.0.0",
-legacyMode: true, // <--- Targeted for refactor
-environment: "development"
-};
-```
+**Director:** "Handing off to Tactical Worker. Initiating Munch-Grab on the Stable ID."
+- **Worker Action:** `jcodemunch::get_symbol(id="sample_app/src/utils/config.ts::globalConfig#const")`
+- **Context (nok~):** `legacyMode: true` identified.
 
-### Phase 3: The Relay & Munch-Sync
-**Tactical Worker:** "Refactor complete. Value changed to `false`. I am emitting a **Munch-Sync Signal** because I've identified that this change will now enforce hash validation in `auth.ts`."
-* **Signal:** 
-    ```
-    [MUNCH-SYNC-SIGNAL]
-    Target: wiki/architecture/session-logic.md
-    Context: legacyMode is now FALSE. SHA-256 validation is strictly enforced.
-    [/MUNCH-SYNC-SIGNAL]
-    ```
+### Phase 3: Execution & Sync
+**Worker:** "Updating `legacyMode` to `false`. Emitting mandatory signal."
+- **Signal:** [MUNCH-SYNC-SIGNAL]
+  Target: wiki/architecture/session-logic.md
+  Insight: legacyMode is now FALSE. SHA-256 is enforced.
+  [/MUNCH-SYNC-SIGNAL]
 
-## 📤 The Result
-**Munch-Director:** "Legacy mode has been disabled in `sample_app/src/utils/config.ts`. The system will now default to SHA-256 validation for all sessions."
-
-## 📊 Munch-Audit (ROI Report)
-**Method:** Wiki-First Relay Protocol.
-**Tokens Used:** 1,450.
-**Naive Baseline:** ~50,000 tokens (Scanning entire `/src` and `/utils` folders).
-**Savings:** 48,550 tokens (97.1% ROI).
-**Status:** rek~mi achieved via Synthesis.
+## 📊 Munch-Audit
+- **Tokens Used:** 1,200
+- **Tokens Saved:** 48,800 (vs. Naive Scan)
+- **Status:** rek~mi achieved.
