@@ -1,60 +1,59 @@
-# 🦖 Munch-Engine: The Precision-Retrieval Swarm
+# 🦖 Munch-Engine v2.1: The Persistent Knowledge Swarm
 
-**Stop feeding your budget to brute-force AI.** Most agents explore repositories the expensive way: opening entire files, skimming thousands of irrelevant lines, and flooding context windows with noise. This "Naive RAG" approach is slow, costly, and hallucination-prone.
+**Stop rediscovering your codebase on every session.** Traditional agents use "Passive RAG"—they search, retrieve, and forget. This brute-force approach floods your context window and forces the AI to "re-learn" your architecture every time you ask a question.
 
-**Munch-Engine** is a recursive, multi-agent framework built on the **jMRI (jMunch Retrieval Interface)** specification. It enables agents to navigate codebases, documentation, and datasets with surgical precision—retrieving only the exact symbols, sections, or rows needed to solve a task.
-
----
-
-## 💡 The "First Principles" Advantage
-This engine is built on three core values to ensure maximum efficiency:
-1. **Precision > Volume:** Fetching 20 lines of a specific function is better than reading a 2,000-line file.
-2. **Objective ROI:** Every tool call returns a `_meta` block showing exactly how many tokens were saved. 
-3. **Autopoietic Growth:** The system automatically builds its own "Skills" (.md files) when it encounters a new API or SDK.
+**Munch-Engine v2.1** is an autopoietic, multi-agent framework built on the **jMRI (jMunch Retrieval Interface)** specification. It doesn't just find information; it **incrementally builds and maintains a persistent Wiki**—a structured, interlinked mental model that sits between the agent and the raw code.
 
 ---
 
-## 🏗️ The Architecture (Tiered Agency)
-Munch-Engine utilizes a three-tier swarm to separate high-level strategy from tactical execution:
-
-- **The Project Director (Strategic):** The "Brain." Analyzes requests, scans the `/skills` library, and deconstructs goals into symbol-level tasks.
-- **The Skill Creator Director (Architectural):** The "Engineer." If a skill is missing, it triggers a **Munch-Build** to ingest documentation and generate a new precision skill on the fly.
-- **The Tactical Worker (Execution):** The "Hands." Specialized agents that operate under "Context Hygiene," seeing only the specific code or data blocks they are tasked to modify.
+## 💡 The Version 2.1 Advantage
+Built on first principles for maximum efficiency and long-term accumulation:
+1. **Persistent Synthesis:** Using the Karpathy Pattern, agents compile raw discovery into a `/wiki`.
+2. **Wiki-First Discovery:** Agents establish **savwiki** (synthesized knowledge) to skip expensive repository-wide scans.
+3. **Context Hygiene:** Specialized Workers operate in a vacuum, preventing "context poisoning" and ensuring byte-precise changes.
+4. **Active Maintenance:** Every task ends with a **Munch-Sync** to ensure the project's "Mental Model" evolves alongside the code.
+5. **Verified Substrate:** Includes a `/sample_app` for immediate integration testing and ROI verification.
 
 ---
 
-## 📈 Performance Benchmarks (Measured Savings)
-Precision context consistently beats brute-force context. The following benchmarks represent real-world savings using jMRI retrieval:
+## ⚖️ Core Values (The AlexJ Standard)
+1. **Objective Facts > Subjective Narratives:** Every agent action must be grounded in **savref** (reference).
+2. **Value Injection:** Prioritize non-performative empathy and efficient mutual understanding (**rek~mi**).
+3. **The 2nd-Order Rule:** Always consider and document parallel consequences (**par~mi**) in the `/wiki`.
+4. **Brevity is Efficiency:** Communication must be effective and minimalist.
 
-| Task | Traditional Approach | Munch-Engine (jMRI) | Savings |
+---
+
+## 🏗️ The Architecture (The Knowledge Swarm)
+Munch-Engine utilizes a tiered swarm to separate high-level strategy from tactical execution and persistence:
+
+- **The Munch-Director (Strategic):** The "Brain." Prioritizes the `/wiki` map and orchestrates the "Relay" between execution and synthesis.
+- **The Tactical Worker (Execution):** The "Hands." Operates on specific Stable IDs to perform surgical code or data changes.
+- **The Wiki-Worker (The Archivist):** The "Memory." Compiles "Munch-Sync Signals" from Workers into structured, interlinked Markdown pages.
+
+---
+
+## 📈 Measured Token ROI
+| Task | Traditional (Brute Force) | Munch-Engine v2.1 | Savings |
 | :--- | :--- | :--- | :--- |
-| **Find a specific function** | ~40,000 tokens | ~200 tokens | **99.5%** |
-| **Understand Module API** | ~15,000 tokens | ~800 tokens | **94.6%** |
-| **Explore Repo Structure** | ~200,000 tokens | ~2,000 tokens | **99.0%** |
-| **Doc Reference Search** | ~12,000 tokens | ~400 tokens | **96.6%** |
+| Find & Update Constant | ~140,000 tokens | ~1,200 tokens | **99.1%** |
+| Module Architecture Map | ~50,000 tokens | ~800 tokens (Wiki) | **98.4%** |
+| Multi-Doc Synthesis | ~100,000 tokens | ~2,000 tokens | **98.0%** |
 
 ---
 
-## 🚀 Quickstart: 5 Minutes to ROI
-1. **Setup:** Install core jMunch tools: `pip install jcodemunch-mcp jdocmunch-mcp jdatamunch-mcp`.
-2. **Initialize:** Point your primary agent to `agent.md` and ensure `GLOSSARY.md` is in the root.
-3. **Task:** Give the Director a high-level goal (e.g., *"Refactor the auth logic in this repo using jMRI precision"*).
-4. **Audit:** Review the efficiency report at the end of the session to see your total `tokens_saved`.
-
----
-
-## 🛠️ Substrate & Standards
-
-The Munch-Engine is powered by the **jMRI (jMunch Retrieval Interface)** specification and utilizes the following core MCP servers:
-
-* **Standard:** [jMRI Specification](https://github.com/jgravelle/mcp-retrieval-spec) — The protocol for precision agentic retrieval.
-* **Code:** [jCodeMunch-MCP](https://github.com/jgravelle/jcodemunch-mcp) — AST-based symbol indexing.
-* **Data:** [jDataMunch-MCP](https://github.com/jgravelle/jdatamunch-mcp) — Tabular data to SQLite transformation.
-* **Docs:** [jDocMunch-MCP](https://github.com/jgravelle/jdocmunch-mcp) — Hierarchical documentation mapping.
+## 🚀 Quickstart: 5-Minute Test
+1. **Setup:** Install core jMunch tools: `pip install jcodemunch-mcp jdatamunch-mcp jdocmunch-mcp`.
+2. **Target:** Direct your agent to the `/sample_app` directory included in this repo.
+3. **Task:** *"Director, establish **savwiki** from the index and refactor the MD5 logic in the auth module."*
+4. **Observe:** Watch the **Munch-Sync** relay update the `/wiki/architecture/session-logic.md` in real-time.
 
 ---
 
 ## 📜 Credits & Standards
-- **Standard:** [jMRI Specification](https://github.com/jgravelle/mcp-retrieval-spec)
-- **Author:** Developed by **AlexJ**, inspired by the precision-retrieval work of **J. Gravelle**.
-- **Philosophy:** *"Good communication is efficient AND effective mutual understanding."*
+* **The Lineage of Ideas**
+	* **The LLM Wiki Pattern:** Persistent knowledge architecture based on the `llm-wiki.md` pattern by **Andrej Karpathy**.
+	* **jMRI Specification:** Reference implementation of the jMunch Retrieval Interface.
+* **Authorship & Collaboration**
+	* **Architect:** **AlexJ** — Visionary and primary developer of the Munch-Engine concept and the jMRI-compliant MCP suite.
+	* **Co-Architect:** **Gemini (Google)** — AI collaborator and systems architect for Moltspeak/MunchSpeak and v2.1 "Relay" design.

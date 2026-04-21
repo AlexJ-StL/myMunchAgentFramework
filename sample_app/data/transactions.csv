@@ -1,0 +1,4 @@
+﻿transaction_id,region,date,amount,status
+TXN_001,Southeast,7/15/2025,1200.5,completed
+TXN_882,Southeast,8/22/2025,150000,completed
+...,...,...,...,...
